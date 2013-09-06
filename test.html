@@ -1,0 +1,45 @@
+<html>
+<head>
+
+<script src="../../kinetic-v4.6.0.js"></script>
+<script src="EditableShape.js"></script>
+
+</head>
+<body>
+
+<div id="container" style="float:left"></div>
+<div id="hit" style="position:relative; float:left"></div>
+
+<script>
+
+    var stage = new EdK.SelectableStage({
+		container: document.getElementById('container'),
+		width:500,
+		height:500
+	});
+
+    var layer = new Kinetic.Layer({
+        width: 500,
+        height: 500
+    });
+
+    var rect = new Kinetic.Rect({
+        x: 100,
+        y: 100,
+        width : 200,
+        height: 200,
+        fill: 'green',
+        stroke: '#ff0000',
+        strokeWidth: 4,
+        editable: true
+    });
+
+    layer.add(rect);
+    stage.add(layer);
+
+    document.getElementById("hit").appendChild(layer.hitCanvas.element);
+
+</script>
+
+</body>
+</html>
